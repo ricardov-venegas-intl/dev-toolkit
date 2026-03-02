@@ -20,16 +20,7 @@ function Start-VS {
     }
 }
  
-function ConnectTo-DarkQueen {
-    Start-Process `
-        -FilePath "C:\Users\veneg\OneDrive\Desktop\Apps\Cloudflared\cloudflared.exe" `
-        -ArgumentList @( "access", "rdp", "--hostname", "darkqueen.ricardovenegas.net", "--url", "rdp://localhost:5333" )
-    mstsc -v:localhost:5333
-}
-
-function ssh-evil-princess {
-    ssh -i "$env:USERPROFILE/.ssh/evil-princess" local-admin@evil-princess
-}
+function cn { code -n $(if ($args.Count -eq 0) { "." } else { $args }) }
 
 function Prompt {
     $ESC = [char]27
